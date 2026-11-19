@@ -89,3 +89,80 @@ main{padding:24px 0 80px;min-height:70vh}
  main{padding:0}.wrap{padding:0;max-width:none}.doc{box-shadow:none;padding:0;max-width:none}
  .doc h2,.doc figure,.doc tr{break-inside:avoid}
 }
+/* ================= Pase móvil ================= */
+html,body{max-width:100%;overflow-x:clip}
+img,svg,canvas,table{max-width:100%}
+.grid2>*,.grid3>*,.grid4>*,.bk>*,.card,.field,.row>*{min-width:0}
+.zctl{display:inline-flex;align-items:center;gap:6px;margin-left:auto}
+.zctl b{font-size:13px;min-width:40px;text-align:center;color:var(--muted)}
+.zctl .icon-btn{font-size:20px;font-weight:700}
+.board{overflow:auto;-webkit-overflow-scrolling:touch}
+.board svg{margin:0 auto}
+.navbar{display:flex;align-items:center;gap:8px;margin-top:18px}
+.m-only{display:none!important}
+.tb .ic{display:none}
+.seg.x,.chips.x{flex-wrap:wrap}
+@media (max-width:720px){
+ .m-only{display:inline-flex!important}
+ .demo-bar{font-size:11.5px;padding:4px 12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+ .top-in{height:60px;gap:8px}
+ .brand{gap:8px;min-width:0;flex:1 1 auto}.mono svg{width:36px;height:36px}
+ .top .wordmark b{font-size:15px;white-space:nowrap}.top .wordmark small{display:none}
+ .top-act{gap:6px;flex:none}
+ .tb{width:44px;height:44px;padding:0}.tb .lbl{display:none}.tb .ic{display:block}
+ main{padding:16px 0 112px}
+ .wrap{padding:0 16px}
+ .pg-h{margin-bottom:14px;gap:10px}
+ .pg-h h1{font-size:24px}
+ .pg-h .acts{width:100%}
+ .acts-l{display:grid!important;grid-template-columns:1fr 1fr;gap:8px}
+ .acts-l .btn{white-space:normal;line-height:1.2;text-align:center;padding:0 10px;font-size:14px}
+ .acts-l .btn-primary{grid-column:1/-1}
+ .box{padding:16px;border-radius:14px}
+ .box h2{font-size:20px}
+ .grid2,.grid3{grid-template-columns:1fr}
+ .grid4{grid-template-columns:1fr 1fr}
+ .inp input,.inp select,.inp.sm input,.inp.sm select,textarea,.tbl input,.tbl select{font-size:16px!important}
+ .inp.sm{height:48px}
+ .chip{height:44px;padding:0 16px}
+ .chips.x,.seg.x{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;max-width:100%}
+ .chips.x::-webkit-scrollbar,.seg.x::-webkit-scrollbar,.stepper.vt::-webkit-scrollbar{display:none}
+ .seg button{min-height:44px;white-space:nowrap;flex:none}
+ .pal button{min-height:48px;flex:1 1 140px}
+ .thumbs button{width:36px;height:36px}
+ /* stepper horizontal con scroll */
+ .stepper.vt{gap:4px;margin:0 -16px 14px;padding:0 16px;scroll-snap-type:x proximity}
+ .stepper.vt .st{min-width:auto;flex:none;scroll-snap-align:center}
+ .stepper.vt .st-b{font-size:13px;gap:6px;padding:6px 8px 8px;min-height:44px;white-space:nowrap}
+ /* barra de acciones fija abajo */
+ .navbar{position:fixed;left:0;right:0;bottom:0;z-index:35;margin:0;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:color-mix(in srgb,var(--paper) 94%,transparent);backdrop-filter:blur(12px);border-top:1px solid var(--line);box-shadow:0 -6px 20px rgba(28,26,23,.06)}
+ .navbar .btn{--h:48px;padding:0 16px}
+ .navbar .nb-prev .lbl{display:none}
+ .toast{bottom:92px}
+ /* tablas → tarjetas apiladas */
+ .tbl.resp tr{grid-template-columns:1fr 1fr;align-items:end}
+ .tbl.resp td[data-l]::before{content:attr(data-l);display:block;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.4px;color:var(--faint);margin-bottom:3px}
+ .tbl.resp td.n{text-align:left}
+ .tbl.resp .chk{min-height:44px}
+ .tbl input,.tbl select{height:44px}
+ /* boceto */
+ .board svg{max-height:none}
+ .palcard{position:fixed;left:0;right:0;bottom:0;z-index:50;margin:0;max-height:72vh;overflow:auto;border-radius:18px 18px 0 0;padding-bottom:calc(16px + env(safe-area-inset-bottom));transform:translateY(105%);visibility:hidden;transition:transform .25s ease,visibility .25s}
+ .palcard.open{transform:none;visibility:visible;box-shadow:var(--shadow-l)}
+ .sheet-bg{position:fixed;inset:0;z-index:45;background:rgba(28,26,23,.35);opacity:0;pointer-events:none;transition:opacity .2s}
+ .sheet-bg.open{opacity:1;pointer-events:auto}
+ .tot .big{font-size:22px}
+ .doc{padding:14px;border-radius:12px}
+ .doc-h{flex-wrap:wrap}.doc .wordmark b{font-size:16px}
+ .doc .tbl{min-width:520px}
+ .kv{grid-template-columns:110px 1fr}
+ .sig{height:200px}
+ dialog .row .btn{flex:1}
+}
+.board svg{max-width:none}
+@media (max-width:720px){
+ .tbl.resp tr{border-bottom:0;margin-bottom:10px;padding:10px;background:var(--paper);border:1px solid var(--line);border-radius:12px}
+ .tbl.resp.cot tr{grid-template-columns:1fr 1fr 1.2fr}
+ .tbl.resp.cot td[data-imp]{grid-column:1/3;align-self:center;font-weight:800}
+ .tbl.resp.cot td:last-child{justify-self:end}
+}
